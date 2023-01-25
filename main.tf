@@ -3,8 +3,8 @@ module "network" {
     region = var.region
     vpc_name = var.vpc_name
    
-    subnet_1_name = var.subnet_1_name
-    subnet_2_name = var.subnet_2_name
-    subnet_1_cidr = var.subnet_1_cidr
-    subnet_2_cidr = var.subnet_2_cidr
+    subnet_name_1 = var.subnet_name_1
+    subnet_name_2 = var.subnet_name_2
+    subnet_cidr_1 = var.subnet_cidr_1
+    subnet_cidr_2 = var.subnet_cidr_2
 }

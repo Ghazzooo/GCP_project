@@ -8,18 +8,18 @@ variable "subnet_region" {
   type = string
   
 }
-variable "subnet_1_name" {
+variable "subnet_name_1" {
   type = string
 }
 
-variable "subnet_2_name" {
+variable "subnet_name_2" {
   type = string
 }
 
-variable "subnet_1_cidr" {
+variable "subnet_cidr_1" {
   type = string
 }
 
-variable "subnet_2_cidr" {
+variable "subnet_cidr_2" {
   type = string
 }
