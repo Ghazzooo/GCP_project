@@ -1,4 +1,4 @@
-esource "google_compute_instance" "private_vm" {
+resource "google_compute_instance" "private_vm" {
   name         = "private-vm-instance"
   machine_type = "e2-micro"
   zone         = "us-easr4-b"
