@@ -5,7 +5,7 @@ resource "google_compute_instance" "private_vm" {
   allow_stopping_for_update = true
 
   depends_on = [
-    google_container_cluster.private-cluster
+    google_container_cluster.private_cluster
    , google_container_node_pool.nodepool
   ]
 
@@ -18,8 +18,7 @@ resource "google_compute_instance" "private_vm" {
                                 sudo apt-get update && sudo apt-get install -y google-cloud-cli
                                 sudo apt-get install kubectl
                                 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
-                                gcloud container clusters get-credentials my-private-cluster --zone us-central1-c --project iti-seada
-                                kubectl create -Rf gke-dep
+                                gcloud container clusters get-credentials gke-cluster --zone us-east4-b --project my-project-ghazooo
                                   EOF
 
   boot_disk {
@@ -31,7 +30,7 @@ resource "google_compute_instance" "private_vm" {
   }
  
   network_interface {
-    network = module.network.vpc_name_output
+    network = module.network.vpc_name
     subnetwork = module.network.subnet_name_1
   }
   service_account {

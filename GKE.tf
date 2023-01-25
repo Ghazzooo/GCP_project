@@ -1,10 +1,10 @@
-resource "google_container_cluster" "private-cluster" {
-  name                     = "private-gke-cluster"
+resource "google_container_cluster" "private_cluster" {
+  name                     = "gke-cluster"
   location                 =    "us-east4-b"
   remove_default_node_pool = true
   initial_node_count       = 1
   network                  = var.vpc_name
-  subnetwork               = var.subnet_2_name
+  subnetwork               = var.subnet_name_2
 
   node_locations = [ "us-east4-c" ]
 
@@ -33,14 +33,14 @@ resource "google_container_cluster" "private-cluster" {
 
 resource "google_container_node_pool" "nodepool" {
   name       = "node-pool"
-  cluster    = google_container_cluster.private-cluster.id
+  cluster    = google_container_cluster.private_cluster.id
   node_count = 2
 
   node_config {
     preemptible  = true
     machine_type = "e2-micro"
 
-    service_account = google_service_account.project-service-account.id
+    service_account = google_service_account.project_service_account.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform" 
     ] 
