@@ -34,7 +34,7 @@ resource "google_compute_instance" "private_vm" {
     subnetwork = module.network.subnet_name_1
   }
   service_account {
-        email = google_service_account.project_service_account.email
+        email = google_service_account.final_service_account.email
         scopes = [ "cloud-platform" ] 
 }
 

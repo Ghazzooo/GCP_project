@@ -40,7 +40,7 @@ resource "google_container_node_pool" "nodepool" {
     preemptible  = true
     machine_type = "e2-micro"
 
-    service_account = google_service_account.project_service_account.email
+    service_account = google_service_account.final_service_account.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform" 
     ] 
