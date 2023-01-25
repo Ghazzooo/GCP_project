@@ -8,7 +8,7 @@ resource "google_project_iam_custom_role" "my_role" {
 }
 
 resource "google_service_account" "final_service_account" {
-  account_id = "project-service-account"
+  account_id = "final-service-account"
   project = "my-project-ghazooo"
 }
 

@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: app-container
-          image: gcr.io/mohamed-abdelrazik-project/python-app-img
+          image: gcr.io/my-project-ghazooo/python_image
           ports:
-            - containerPort: 8080
+            - containerPort: 8000
           env:
             - name: REDIS_HOST
               value: redis-service.default.svc.cluster.local
