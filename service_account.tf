@@ -12,7 +12,7 @@ resource "google_service_account" "project-service-account" {
   project = "my-project-ghazooo"
 }
 
-resource "google_project_iam_binding" "project-service-account-iam" {
+resource "google_project_iam_binding" "service-account-iam-1" {
   project = "my-project-ghazooo"
   role    = "roles/storage.admin"
   members = [
@@ -20,7 +20,7 @@ resource "google_project_iam_binding" "project-service-account-iam" {
   ]
 }
 
-resource "google_project_iam_binding" "project-service-account-iam2" {
+resource "google_project_iam_binding" "service-account-iam-1" {
   project = "my-project-ghazooo"
   role    = "projects/${google_service_account.project-service-account.project}/roles/${google_project_iam_custom_role.my_role.role_id}"
   members = [
