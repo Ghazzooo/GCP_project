@@ -14,7 +14,7 @@ resource "google_container_cluster" "private_cluster" {
 
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block   = "10.0.0.0/24"
+      cidr_block   = "10.0.1.0/24"
       display_name = "managment-cidr-range"
     }
   }
