@@ -11,31 +11,17 @@
   * $ docker tag redis gcr.io/my-project-ghazooo/redis_image
   * $ docker push gcr.io/my-project-ghazooo/redis_image
 
-![home_Page Image](./Images/gcr.png)
 
-### Create New Bucket And Upload yaml Files To The Bucket :
-
-  * $ gsutil mb -p iti-seada -c standard -l us-central1 -b on gs://seada-bucket-yaml
-  * $ gsutil cp -r /home/mohamed/GCP-Final/gke-dep/ gs://seada-bucket-yaml
-
-![home_Page Image](./Images/bucket.png)
+## Then, create the infrastructure using terraform
 
 ### Using Script.sh File When The VM Created Will Do : 
 
   * Install gcloud 
   * Install kubectl
   * Install gcloud plugin
-  * Connect To Kubernetes Cluster
-  * Copy yaml Files From Bucket To VM
-  * Apply All yaml Files
 
-![home_Page Image](./Images/script.png)
+![home_Page Image](./screenshots/userdata.png)
 
-### Permission To Access Private Container Registry :
-
-  * It Added To The Code
-
-![home_Page Image](./Images/permission.png)
 
 ### For Apply The Terraform Code :
 
@@ -43,12 +29,25 @@
   * $ terraform plan 
   * $ terraform apply
 
-![home_Page Image](./Images/apply.png)
+
+## Then, shh to the VM to run the yaml files
+
+```
+ $ gcloud compute ssh --zone "us-east4-b" "private-vm-instance"  --tunnel-through-iap --project "my-ptoject-ghazooo"
+```
+
+```
+$ gcloud compute scp --recurse /home/ghazooo/Desktop/GCP_project/kube_files private-vm-instance:/home/ghazooo  --zone "us-east4-b"   --tunnel
+```
+
 
 ### Get The Load Balancer IP And Port And Test it :
 
-![home_Page Image](./Images/load-balancer.png)
+![home_Page Image](./screenshots/cluster.png)
 
-![home_Page Image](./Images/test.png)
+![home_Page Image](./screenshots/services.png)
+
+![home_Page Image](./screenshots/application.png)
+
 
 
