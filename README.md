@@ -37,7 +37,7 @@
 ```
 
 ```
-$ gcloud compute scp --recurse /home/ghazooo/Desktop/GCP_project/kube_files private-vm-instance:/home/ghazooo  --zone "us-east4-b"   --tunnel
+$ gcloud compute scp --recurse /home/ghazooo/Desktop/GCP_project/kube_files private-vm-instance:/home/ghazooo  --zone "us-east4-b"   --tunnel-through-iap
 ```
 
 
